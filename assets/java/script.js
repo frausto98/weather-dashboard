@@ -1,5 +1,5 @@
 // global variables, what needs to be storedand referenced in multiple functions
-var APIKey = "87bbc880ff5124eed3d8d3e18228705b";
+var APIKey = "";
 var cityInput = x.val()
     // request URLS with specific variable name
     // store api keys
