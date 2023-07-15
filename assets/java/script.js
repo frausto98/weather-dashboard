@@ -4,8 +4,12 @@ var cityInput = document.getElementById('cityInput')
 var searchBtn = document.getElementById('searchBtn')
 var currentWeathCont = document.getElementById('currentWeatherInfo')
 var forecastCont = document.getElementById('forecastInfo')
-// var currentDay = dayjs().format("MM DD YYYY")
-
+var date = new Date();
+var year = date.getFullYear();
+var month = String(date.getMonth()+1).padStart(2, "0");
+var day = String(date.getDate()).padStart(2, "0");
+var todaysDate = `${month}/${day}/${year}`;
+console.log(todaysDate)
 
 function handleUserInput() {
     // capture the value the user types in to the input element
@@ -35,10 +39,11 @@ function displayCurrentWeather (data) {
     var pTemp = document.getElementById("temperature")
     var pHumid = document.getElementById("humidity")
     var pWind = document.getElementById("windSpeed")
-    h3El.textContent = cityName
+    h3El.textContent = cityName + " " + todaysDate;
     pTemp.textContent = "Temperature: " + cityTemp + "F"
     pHumid.textContent = "Humidity: " + cityHumid
     pWind.textContent = "Wind Speeds: " + cityWind
+    
 
 
 }
@@ -55,18 +60,26 @@ function forecast(x) {
         })
 
 }
-function displayForecastData (data) {
-    for (var i = 0; i<=5; i++) {
+function displayForecastData (x) {
+    for (var i = 1; i<=5; i++) {
 
-        var forecastArray = data.list[i * 8 - 1]
-        // var dates = 
+        var forecastArray = x.list[i * 7 - 1]
+        var foreDate = forecastArray.dt_txt
+        var foreTemp = forecastArray.main.temp
+        var foreHumid = forecastArray.main.humidity
+        var foreWind = forecastArray.wind.speed
+        document.getElementById("date" + i).textContent = foreDate;
+        document.getElementById("temp" +i).textContent = "Temperature: " + foreTemp;
+        document.getElementById("humid" +i).textContent = "Humidity: " + foreHumid;
+        document.getElementById("wind" +i).textContent = "Wind Speed: " + foreWind;
+        
     console.log(forecastArray)
     debugger;
-    var allDayBlocks = document.querySelectorAll(".dayBlock")
-        var pEl = document.createElement("p")
-        var pElT = pEl.textContent = "Temperature: " + forecastArray.main.temp
-        var pElH = pEl.textContent = "Humidity: " + forecastArray.main.humidity
-        var pElW = pEl.textContent = "WindSpeeds: " + forecastArray.wind.speed
+    // var allDayBlocks = document.querySelectorAll(".dayBlock")
+    //     var pEl = document.createElement("p")
+    //     var pElT = pEl.textContent = "Temperature: " + forecastArray.main.temp
+    //     var pElH = pEl.textContent = "Humidity: " + forecastArray.main.humidity
+    //     var pElW = pEl.textContent = "WindSpeeds: " + forecastArray.wind.speed
 
 
 
