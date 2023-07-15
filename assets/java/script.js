@@ -4,7 +4,7 @@ var cityInput = document.getElementById('cityInput')
 var searchBtn = document.getElementById('searchBtn')
 var currentWeathCont = document.getElementById('currentWeatherInfo')
 var forecastCont = document.getElementById('forecastInfo')
-//var currentDay = dayjs().format("MM DD YYYY")
+// var currentDay = dayjs().format("MM DD YYYY")
 
 
 function handleUserInput() {
@@ -50,17 +50,29 @@ function forecast(x) {
             return res.json()
         })
         .then(function (data) {
+            // console.log(data)
             displayForecastData(data);
         })
 
 }
 function displayForecastData (data) {
-    forecastArray = data.list
+    for (var i = 0; i<=5; i++) {
+
+        var forecastArray = data.list[i * 8 - 1]
+        // var dates = 
     console.log(forecastArray)
-    for (i = 0; i<forecastArray.length; i + 8){
-    
+    debugger;
+    var allDayBlocks = document.querySelectorAll(".dayBlock")
+        var pEl = document.createElement("p")
+        var pElT = pEl.textContent = "Temperature: " + forecastArray.main.temp
+        var pElH = pEl.textContent = "Humidity: " + forecastArray.main.humidity
+        var pElW = pEl.textContent = "WindSpeeds: " + forecastArray.wind.speed
+
+
+
     }
 }
+
 
 
 searchBtn.addEventListener('click', handleUserInput)
