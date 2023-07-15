@@ -1,22 +1,17 @@
-# weather-dashboard
+# Weather Dashboard
 
-AS A traveler
+## Description:
+Just about everyone tends to check the weather before going out. This weather dashboard was intended for the average out-goer who needs to be a step ahead of the game, and the weather. Check out the current weather and check out the 5-day forecast all by inputting your city!
 
+## Installation:
+N/A
 
-I WANT to see the weather outlook for multiple cities
-SO THAT I can plan a trip accordingly
+## Usage:
+Simply input your city, and become aware of your outside weather!
+![Alt text](<./assets/screenshot/Screen Shot 2023-07-14 at 9.18.37 PM.png>)
 
-GIVEN a weather dashboard with form inputs
+## License:
+N/A
 
-
-WHEN I search for a city
-THEN I am presented with current and future conditions for that city and that city is added to the search history
-
-WHEN I view current weather conditions for that city
-THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, and the wind speed
-https://openweathermap.org/current,
-WHEN I view future weather conditions for that city
-THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
-https://openweathermap.org/forecast5, 
-WHEN I click on a city in the search history
-THEN I am again presented with current and future conditions for that city
+## Credits:
+N/A
